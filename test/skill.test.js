@@ -32,7 +32,17 @@ function parseSkill(markdown) {
 test('the skill directory is named after the skill', async () => {
   const markdown = await readFile(join(root, 'SKILL.md'), 'utf8')
   const { fields } = parseSkill(markdown)
-  assert.equal(basename(root), 'hydration-coach')
+  const folder = basename(root)
+  assert.equal(
+    folder,
+    'hydration-coach',
+    // The spec makes the folder name part of the contract, and the failure is
+    // easy to hit by accident: a git clone keeps the repository name, but a
+    // GitHub ZIP download appends "-main", and an unpacked tarball may differ
+    // again. Say what to do rather than just which string mismatched.
+    `the Agent Skills spec requires the containing folder to be named after the skill, `
+    + `and this folder is '${folder}'. Rename it to 'hydration-coach' (a ZIP download adds a '-main' suffix).`,
+  )
   assert.equal(fields.name, basename(root), 'the spec requires name to equal the directory name')
 })
 

@@ -110,6 +110,8 @@ node scripts/water.mjs paths                  # 打印配置与状态文件位�
 
 ## 测试
 
+请保持目录名为 `hydration-coach`。Agent Skills 规范把目录名写进了契约（frontmatter 的 `name` 必须与之相等）：git clone 会沿用仓库名所以没问题，但从 GitHub 下载 ZIP 会得到 `hydration-coach-main`，需要改回来。有一条测试专门检查这点，失败时会直接告诉你原因。
+
 ```bash
 npm test        # 54 个测试，无需安装任何依赖
 ```

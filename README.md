@@ -133,6 +133,11 @@ keeping separate state: the plugin uses `~/.dsh/water-reminder.json`, this skill
 
 ## Tests
 
+Keep the folder named `hydration-coach`. The Agent Skills spec makes the folder name part of the
+contract (`name` in the frontmatter must equal it), so a git clone — which keeps the repository name
+— is fine, but a GitHub ZIP download arrives as `hydration-coach-main` and needs renaming back. One
+test checks exactly that and says so if it fails.
+
 ```bash
 npm test        # 54 tests, no dependencies to install
 ```
