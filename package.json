@@ -1,0 +1,20 @@
+{
+  "name": "hydration-coach-skill",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portable water-reminder skill for AI coding tools (Claude Code, Codex, Cursor, Gemini CLI, WorkBuddy, and anything else that reads Agent Skills)",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test",
+    "install:dry": "node scripts/install.mjs --dry-run",
+    "install:skills": "node scripts/install.mjs",
+    "install:hooks": "node scripts/install.mjs --hooks",
+    "uninstall": "node scripts/install.mjs --uninstall --hooks",
+    "status": "node scripts/water.mjs status",
+    "check": "node scripts/water.mjs check"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
